@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahamed Education</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <style>
+        * {
+            box-sizing: border-box;
+
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        body::after {
+            content: "";
+            margin-top: 20px;
+        }
+
+        .upper {
+            width: 100%;
+            height: 90vh;
+            background: url('./images/kevin-grieve-TxldtkwZFFc-unsplash.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+
+        }
+
+        nav {
+            display: flex;
+            flex-basis: content;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            background-color: #aaa5a5;
+        }
+
+        nav .brand {
+            font-size: 3em;
+            color: #ffffff;
+            font-weight: bold;
+            margin-left: 2em;
+        }
+
+        nav ul {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            text-align: right;
+        }
+
+        nav ul>li {
+            overflow: hidden;
+            list-style: none;
+            margin: 0 .5em;
+            font-weight: 600;
+            color: rgb(255, 255, 255);
+            font-size: 1.1em;
+
+            cursor: pointer;
+            /* background-color: #ffffff;
+            padding: .4em; */
+
+
+        }
+
+        .link {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: .4em;
+        }
+
+        nav ul>li:hover>a {
+            background-color: #ffffff;
+            color: #000;
+            border-bottom: 2px solid red;
+
+        }
+
+        /* Drop-down */
+
+        #drop-menu {
+            display: none;
+        }
+
+        .headding {
+            margin-top: 6em;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            max-width: 1200px;
+        }
+
+        .headding h1 {
+            font-size: 2.3em;
+        }
+
+        .apply {
+            padding: .4em;
+            max-width: 1200px;
+            color: #e0dfdf;
+            text-align: center;
+
+
+
+
+        }
+
+        .apply button {
+            padding: .7em 1em;
+            font-size: 1em;
+            margin-top: 2em;
+            cursor: pointer;
+        }
+
+        .apply b {
+            color: #eeeded;
+        }
+
+        /* Lower */
+        .lower {
+            width: 100%;
+            height: auto;
+
+
+        }
+
+        .content-head {
+            max-width: 1100px;
+            width: 85%;
+            margin: auto;
+            text-align: center;
+            margin-top: 4em;
+            /* background-color: #e0dfdf; */
+            padding: 1em .5em;
+            font-size: 2em;
+        }
+
+        .middle {
+            max-width: 1100px;
+            width: 85%;
+            margin: 0 auto;
+            margin-top: 4em;
+            margin-bottom: 12em;
+
+
+
+        }
+
+        .middle .first-row {
+            display: flex;
+            width: 100%;
+
+        }
+
+        .middle .first-row .font-end {
+            width: calc(50% - 2em);
+            margin: 2em 1em;
+            min-height: 19em;
+            text-align: center;
+            justify-items: center;
+            box-shadow: 1px 1px 5px #000;
+
+        }
+
+        .middle .first-row .back-end {
+            width: calc(50% - 2em);
+            margin: 2em 1em;
+            min-height: 19em;
+            text-align: center;
+            justify-items: center;
+            box-shadow: 1px 1px 5px #000;
+        }
+
+        .middle .secound-row {
+
+            display: flex;
+        }
+
+        .middle .secound-row .dbms {
+            width: calc(50% - 2em);
+            margin: 2em 1em;
+            min-height: 19em;
+            text-align: center;
+            justify-items: center;
+            box-shadow: 1px 1px 5px #000;
+        }
+
+        .middle .secound-row .devops {
+            width: calc(50% - 2em);
+            margin: 2em 1em;
+            min-height: 19em;
+            text-align: center;
+            justify-items: center;
+            box-shadow: 1px 1px 5px #000;
+        }
+
+        .middle img {
+            width: 80px;
+            height: 80px;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+
+        /* Our Tainer */
+        .our-tainer {
+            width: 100%;
+            max-width: 1200px;
+            /* height:15em; */
+            padding: 1em;
+            background-color: rgb(230, 228, 222);
+
+        }
+
+        .our-tainer h3 {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            color: rgb(38, 52, 73);
+            font-size: 1.8em;
+            margin-top: .2em;
+            margin-bottom: 1em;
+            color: blue;
+
+
+        }
+
+        .our-tainer .slide-container {
+            display: flex;
+            justify-content: space-between;
+            /* margin-top:2.7em; */
+            text-align: center;
+            padding: 2em 6em;
+
+        }
+
+        .slide-container img {
+            padding: 0;
+            margin: 0;
+            width: 100px;
+            height: 105px;
+            border-radius: 50%;
+
+        }
+
+        .slide-container .nameOfTainer {
+            margin: .5em 0;
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #111111;
+        }
+
+        .slide-container .spacialities {
+            font-size: medium;
+            color: #7c7878;
+            font-style: italic;
+            font-family: sans-serif;
+        }
+
+
+        /* Fotter */
+        .footer {
+            width: 100%;
+            background-color: #f2f2f2;
+        }
+
+        .footer-top {
+            max-width: 1200px;
+            height: 30em;
+            padding: 2em;
+            /* 
+            border-bottom-left-radius: 400px;
+            border-bottom-right-radius: 500px; */
+        }
+
+        .footer-top h3 {
+            text-align: center;
+            font-weight: 800;
+            font-size: 2em;
+            color: blue;
+            margin: 1em 0 2em 0;
+        }
+
+        .footer-top form {
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .footer-top .form-group {
+            display: block;
+            margin: 1em 1em;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: .2em;
+            font-size: 1.3em;
+        }
+
+        .form-group input {
+            padding: .5em;
+            width: 100%;
+        }
+
+        .footer-top .signup-btn {
+            margin-top: 1em;
+            padding: .5em 1em;
+            font-size: 1em;
+            font-weight: 550;
+            cursor: pointer;
+            background-color: blue;
+            border: 0;
+            border-radius: 2px;
+            color: #fff;
+        }
+
+        .footer-middle {
+            max-width: 1200px;
+            height: 20em;
+            background-color: rgb(60, 226, 255);
+            border-top-left-radius: 220px;
+            border-top-right-radius: 120px;
+            position: relative;
+        }
+
+        .footer-art {
+            width: 176px;
+            height: 273px;
+            background-color: rgb(191, 230, 236);
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            border-top-right-radius: 80%;
+            border-top-left-radius: 20%;
+        }
+
+        .footer-contact {
+            width: 85%;
+            margin: auto;
+            height: 25em;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .footer-bottom {
+            width: 100%;
+            background-color: #000000;
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            padding: 0.5em;
+            /* text-align: center; */
+            /* margin: auto; */
+        }
+        .footer-bottom .contact-area {
+            display: flex;
+        }
+        .footer-bottom .social-links{
+            
+            padding: 1em;
+            color:#fff;
+            
+            
+        }
+        .footer-bottom .social-links h4{
+            font-size: 1.6em;
+            text-decoration: underline;
+        }
+        .footer-bottom .social-links li{
+            list-style: none;
+            line-height: 1.4;
+            font-weight: 600;
+            font-size: 1.2em;
+            cursor: pointer;
+
+        }
+        .footer-bottom .social-links li:hover{
+            opacity: .5;
+        }
+        .footer-bottom .contact-area{
+            outline: none;
+            border:none;
+            padding: 1em;
+
+        }
+        .contact-area .contact-info {
+            margin-left: 1em;
+            margin-top: 1em;
+        }
+        .contact-area .contact-info h2{
+            color:#fff;
+            text-decoration: underline;
+        }
+        .contact-area .contact-info address{
+            color:rgb(182, 177, 177);
+            font-weight: 500;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.2;
+
+        }
+        
+        .copyright h4{
+            background-color: #000000;
+            padding: 0;
+            margin: 0;
+            padding:.5em 1em;
+            text-align: center;
+            color:#8f8b8b;
+            font-weight: 400;
+        }
+        /* Custom css */
+        .bg-dark {
+            background-color: yellow;
+            color: #000;
+            border-radius: 1px;
+
+
+
+        }
+
+        .block {
+            display: block;
+        }
+
+        .p-sm {
+            padding: .1em;
+        }
+
+        .mt-1 {
+            margin-top: .3em;
+        }
+
+        .ms-1 {
+            margin-left: .2em;
+        }
+
+        .btn-primary {
+            background-color: rgb(24, 75, 241);
+            display: inline;
+            padding: 0.6em;
+            border-radius: 1.5px;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            margin-top: 1em;
+            font-size: medium;
+        }
+
+        .btn-primary:hover {
+            opacity: .5;
+        }
+
+        .box-text {
+            width: 80%;
+            margin: 1em auto;
+
+            color: #888585;
+            font-size: medium;
+        }
+
+        /* Custom CSS */
+
+        /* Media Query */
+        @media screen and (max-width:570px) {
+
+            .headding {
+                display: block;
+                padding: 0 2em;
+                margin-top: 7em;
+            }
+
+            .headding h1+h1 {
+                margin-left: 0;
+            }
+
+            .headding h1 {
+                font-size: 2em;
+            }
+
+            /* Content */
+            .middle .first-row {
+                display: block;
+                width: 100%;
+
+            }
+
+            .middle .secound-row {
+                display: block;
+                width: 100%;
+
+            }
+
+            .middle .first-row .font-end {
+                width: calc(100% - 2em);
+                margin: 2em 1em;
+
+                box-shadow: 1px 1px 5px #000;
+            }
+
+            .middle .first-row .back-end {
+                width: calc(100% - 2em);
+                margin: 2em 1em;
+
+                box-shadow: 1px 1px 5px #000;
+            }
+
+            .middle .secound-row .dbms {
+                width: calc(100% - 2em);
+                margin: 2em 1em;
+                box-shadow: 1px 1px 5px #000;
+            }
+
+            .middle .secound-row .devops {
+                width: calc(100% - 2em);
+                margin: 2em 1em;
+
+
+            }
+
+            .footer-art {
+                width: 120px;
+                height: 243px;
+                background-color: rgb(191, 230, 236);
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                border-top-right-radius: 80%;
+                border-top-left-radius: 20%;
+            }
+            .footer-bottom {
+                display: block;
+            }
+        }
+
+        @media screen and (max-width:610px) {
+
+            nav {
+                position: relative;
+            }
+
+            nav ul {
+                display: none;
+                text-align: right;
+                position: absolute;
+                right: 0;
+                top: 87px;
+                background-color: #fff;
+                padding: 1em 1em;
+                margin: 0;
+            }
+
+            nav ul>li {
+                text-align: center;
+
+            }
+
+            nav ul>li:active {
+                opacity: .1;
+
+            }
+
+            #drop-menu {
+                display: block;
+                font-size: 2em;
+                cursor: pointer;
+            }
+
+            nav ul>li {
+                color: #000;
+            }
+
+            /* Content */
+            .link {
+                color: #000;
+                text-decoration: none;
+               
+            }
+
+        }
+
+        @media screen and (max-width:753px) {
+            nav .brand {
+                margin-left: 0;
+            }
+
+            .our-tainer .slide-container {
+                padding: .5em;
+            }
+            .footer-bottom .contact-area {
+            display: block;
+             }
+            .contact-area .contact-info {
+                margin-left: 0;
+                margin-top: 0;
+             }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="upper p-sm">
+        <nav>
+            <div class="brand">
+
+                <a class="link" href="#"><i class="bi bi-book-half"></i></a>
+            </div>
+            <ul id="drop-down">
+                <li><a href="#" class="link">Home</a></li>
+                <li><a class="link" href="#frontend-bootcamp">Frontend</a></li>
+                <li><a class="link" href="#backend-bootcamp">Backend</a></li>
+                <li><a class="link" href="#trainer">Trainer</a></li>
+                <li><a class="link" href="#contact">Signup</a></li>
+            </ul>
+
+            <h2 id="drop-menu"><i class="bi bi-list"></i></h2>
+        </nav>
+        <div class="headding">
+            <h1>Welcome to </h1>
+            <h1 class="bg-dark ms-1 p-sm"> Ahmed Education</h1>
+        </div>
+        <div class="apply">
+            <p><em>We are serving our students from root. Our tainers take care of every student 24/7. We are consulting
+                    our student about their <b>Carrer</b>, <b>Personalities</b>, <b>Higher Education</b>, enhance
+                    <b>English Speaking</b>, and so on.</em></p>
+            <button>Apply Now</button>
+        </div>
+    </section>
+    <!-- FONTEND -->
+    <section class="lower" id="frontend-bootcamp">
+        <h2 class="content-head">Our Font-End Bootcamp</h2>
+        <div class="middle">
+            <div class="first-row">
+                <div class="font-end">
+                    <img src="./images/ico/html.png" alt="">
+                    <p class="box-text">Html is a markup language. Its help us to markup a webpage. This very essential
+                        for web development.</p>
+                    <button class="btn-primary">View More</button>
+                </div>
+                <div class="back-end">
+                    <img src="./images/ico/css.png" alt="">
+                    <p class="box-text">CSS is important for web designers.Cascading Style Sheets are an important way
+                        to control how your web pages look.</p>
+                    <button class="btn-primary">View More</button>
+                </div>
+            </div>
+
+            <div class="secound-row">
+                <div class="dbms">
+                    <img src="./images/ico/javascript-programming-language.png" alt="">
+                    <p class="box-text">The most obvious reason for learning JavaScript is if you have hopes of becoming
+                        a web developer.</p>
+                    <button class="btn-primary">View More</button>
+                </div>
+                <div class="devops">
+                    <img src="./images/ico/react-js.png" alt="">
+                    <p class="box-text">React it's a JavaScript library that enables developers to quickly and
+                        efficiently build interactive and dynamic.</p>
+                    <button class="btn-primary">View More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="our-tainer" id="trainer">
+        <h3>Our Trainer</h3>
+        <div class="slide-container">
+            <div class="left-click">
+                <div class="logo-area"><img src="https://randomuser.me/api/portraits/men/20.jpg" alt=""></div>
+                <div class="nameOfTainer">Ahmed</div>
+                <div class="spacialities">(Frontend Developer)</div>
+            </div>
+            <div class="logo">
+                <div class="logo-area"><img src="./images/developerTools/mySelf.jpg" alt="pikoijo"></div>
+                <div class="nameOfTainer">Mohammed Shiam</div>
+                <div class="spacialities">(Full Stack Website developer)</div>
+            </div>
+            <div class="right-click">
+                <div class="logo-area"><img src="https://randomuser.me/api/portraits/men/11.jpg" alt=""></div>
+                <div class="nameOfTainer">Ibrahim</div>
+                <div class="spacialities">(Backend Developer)</div>
+            </div>
+        </div>
+    </section>
+    <section class="lower" id="backend-bootcamp">
+        <h2 class="content-head">Our Back-End Bootcamp</h2>
+        <div class="middle">
+            <div class="first-row">
+                <div class="font-end">
+                    <img src="./images/ico/github.png" alt="">
+                    <p class="box-text">GitHub is undoubtedly a valuable skill to have as a programmer, not only in the
+                        workplace, but also personally.</p>
+                    <button class="btn-primary">View More</button>
+                </div>
+                <div class="back-end">
+                    <img src="./images/ico/node-js.png" alt="">
+                    <p class="box-text">Node js allows you to build complex and powerful applications without writing
+                        complex code.</p>
+                    <button class="btn-primary">View More</button>
+                </div>
+            </div>
+
+            <div class="secound-row">
+                <div class="dbms">
+                    <img src="./images/ico/expressjs.png" alt="">
+                    <p class="box-text">ExpressJS is a prebuilt Node. js framework that can enable you to develop
+                        quicker and intelligent web applications on the server-side.</p>
+                    <button class="btn-primary">View More</button>
+                </div>
+                <div class="devops">
+                    <img src="./images/ico/mongodb.png" alt="">
+                    <p class="box-text">MongoDB's document-oriented model can be used with many programming languages to
+                        meet the complex development requirements.</p>
+                    <button class="btn-primary">View More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer" id="contact">
+        <div class="footer-top">
+            <h3>Signup For Free</h3>
+            <form action="">
+                <div class="form-group">
+                    <label for="#name">Name</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="#email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div class="form-group">
+                    <button class="signup-btn">Signup</button>
+                </div>
+            </form>
+        </div>
+        <div class="footer-middle">
+            <div class="footer-art">
+
+            </div>
+        </div>
+        <div class="footer-bottom">
+                <div class="contact-area">
+                    <div class="maps">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58364.60291686642!2d89.0862559930979!3d23.89714638624427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fe965536b7d61f%3A0x28fea367efdb38c9!2sKushtia!5e0!3m2!1sen!2sbd!4v1630549130684!5m2!1sen!2sbd" loading="lazy"></iframe>
+                    </div>
+                    <div class="contact-info">
+                        <h2>Our Office</h2>
+                        <address>
+                            Kushtia, Khulna, Bangladesh <br>
+                            Mobile: +8801772711387 <br>
+                            Email: official.shiam123@gmail.com <br>
+                            Website: www.example.com
+                        </address>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <h4>Links</h4>
+                    <li>Facebook</li>
+                    <li>Instragram</li>
+                    <li>linkedin</li>
+                    <li>Twitter</li>
+                    <li>Youtube</li>
+                    <li>Upwork</li>
+    
+                </div>
+        </div>
+        <div class="copyright">
+            <h4>Copyright &copy; 2021; Mohammed Shiam All Rights Reserved</h4>
+        </div>
+    </section>
+
+    <!-- Script -->
+    <script>
+        const dropbox = document.getElementById('drop-menu')
+        const dropdown = document.getElementById('drop-down')
+
+        let i = 'a';
+        let x = '';
+
+        dropbox.addEventListener("click", () => {
+
+
+
+            if (i == 'a') {
+                dropdown.style.display = 'inline'
+                dropbox.style.transform = 'rotate(90deg)'
+                x = 'b';
+                i = ''
+            } else if (x = 'b') {
+                dropdown.style.display = 'none'
+                dropbox.style.transform = 'rotate(180deg)'
+                i = 'a';
+                b = '';
+            }
+        })
+    </script>
+</body>
+
+</html>
